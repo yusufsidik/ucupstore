@@ -1,12 +1,17 @@
-function App() {
+import { Routes, Route } from "react-router-dom";
+
+import Navbar from "./pages/navbar/Navbar";
+import Home from "./pages/home/Home";
+import Products from "./pages/products/Products";
+
+export default function App() {
   return (
-    <div className="h-full min-h-screen min-w-full bg-gradient-to-b from-sky-200 to-orange-300 flex items-center justify-center flex-col">
-      <h1 className="font-bold text-2xl text-slate-800">
-        Coming Soon Ucup Store
-      </h1>
-      <p>Build with React and Tailwind CSS</p>
-    </div>
+    <main className="min-h-screen py-4 bg-gradient-to-b from-sky-200 to-sky-400">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+      </Routes>
+    </main>
   );
 }
-
-export default App;
