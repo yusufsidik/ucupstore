@@ -23,7 +23,7 @@ export default function Navbar() {
             Products
           </Link>
           <Link
-            to="/"
+            to="/categories"
             className="no-underline hover:border-b-2 hover:border-white"
           >
             Categories

@@ -3,7 +3,7 @@ import NavProduct from "../../components/product/NavProduct";
 
 export default function Products() {
   return (
-    <div>
+    <div className="max-w-screen-xl mx-auto">
       <NavProduct />
       <div className="flex justify-center gap-3 pt-5 flex-wrap">
         <Product></Product>
