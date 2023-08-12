@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
-export default function NavProduct(props) {
+function NavProduct(props) {
   const { triggerCategoryProps } = props;
   const [category, setCategory] = useState("");
   const [display, setDisplay] = useState("");
@@ -43,3 +44,9 @@ export default function NavProduct(props) {
     </nav>
   );
 }
+
+NavProduct.propTypes = {
+  triggerCategoryProps: PropTypes.any,
+};
+
+export default NavProduct;

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function Product(props) {
   const { id, title, price, image } = props;
@@ -20,5 +21,12 @@ function Product(props) {
     </div>
   );
 }
+
+Product.propTypes = {
+  id: PropTypes.number,
+  title: PropTypes.string,
+  price: PropTypes.number,
+  image: PropTypes.string,
+};
 
 export default Product;

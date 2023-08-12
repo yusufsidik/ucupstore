@@ -23,13 +23,16 @@ export default function Products() {
         });
         setProducts(listProducts);
       });
-
-    return setProducts([]);
   }, []);
 
-  function triggerCategory(trig) {
-    console.log(trig);
-    fetch(`https://fakestoreapi.com/products/category/${trig}`)
+  function triggerCategory(trigger) {
+    let url = `https://fakestoreapi.com/products/category/${trigger}`;
+
+    if (trigger == "all") {
+      url = "https://fakestoreapi.com/products";
+    }
+
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
         const listProducts = data.map((data) => {
@@ -43,7 +46,6 @@ export default function Products() {
             />
           );
         });
-        console.log(listProducts);
         setProducts(listProducts);
       });
   }
