@@ -25,14 +25,14 @@ export default function Products() {
       });
   }, []);
 
-  function triggerCategory(trigger) {
+  async function triggerCategory(trigger) {
     let url = `https://fakestoreapi.com/products/category/${trigger}`;
 
     if (trigger == "all") {
       url = "https://fakestoreapi.com/products";
     }
 
-    fetch(url)
+    await fetch(url)
       .then((response) => response.json())
       .then((data) => {
         const listProducts = data.map((data) => {

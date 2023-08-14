@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function NavProduct(props) {
   const { triggerCategoryProps } = props;
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("all");
   const [display, setDisplay] = useState("");
 
   useEffect(() => {
@@ -22,12 +22,14 @@ function NavProduct(props) {
             </li>
           );
         });
+
         setDisplay(display);
       });
   }, []);
 
   useEffect(() => {
     triggerCategoryProps(category);
+    console.log("ok");
   }, [category]);
 
   return (
@@ -38,7 +40,6 @@ function NavProduct(props) {
             All
           </button>
         </li>
-
         {display}
       </ul>
     </nav>
